@@ -1,11 +1,8 @@
-use crate::render::Dimension;
-
-use project::{RenderSettings, VentApplicationProject};
+use project::VentApplicationProject;
 use render::{camera::camera_controller3d::CameraController3D, DefaultRuntimeRenderer};
 
-use util::{crash::init_panic_hook, input_handler::InputHandler, version::Version};
-use vent_logging::Logger;
-use vent_window::{Window, WindowAttribs, WindowEvent};
+use util::input_handler::InputHandler;
+use vent_window::{Window, WindowEvent};
 
 pub mod project;
 pub mod render;

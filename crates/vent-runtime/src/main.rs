@@ -1,8 +1,7 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")] // This disables the Windows Console in release mode
 
-use util::crash::init_panic_hook;
 use vent_logging::Logger;
-use vent_runtime::VentApplication;
+use vent_runtime::{util::crash::init_panic_hook, VentApplication};
 
 fn main() {
     init_panic_hook();
