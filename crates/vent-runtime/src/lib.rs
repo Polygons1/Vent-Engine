@@ -11,28 +11,12 @@ pub mod project;
 pub mod render;
 pub mod util;
 
+#[derive(Default)]
 pub struct VentApplication {
     project: VentApplicationProject,
 }
 
 impl VentApplication {
-    pub fn default() {
-        init_panic_hook();
-        Logger::init();
-
-        let project = VentApplicationProject {
-            name: "Placeholder".to_string(),
-            version: Version::new(1, 0, 0),
-            window_settings: WindowAttribs::default().with_title("Placeholder".to_string()),
-            render_settings: RenderSettings {
-                dimension: Dimension::D3,
-                vsync: false,
-            },
-        };
-        let app = VentApplication::new(project);
-        app.start();
-    }
-
     pub fn new(project: VentApplicationProject) -> Self {
         Self { project }
     }

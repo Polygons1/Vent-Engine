@@ -1,9 +1,14 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")] // This disables the Windows Console in release mode
 
+use util::crash::init_panic_hook;
+use vent_logging::Logger;
 use vent_runtime::VentApplication;
 
 fn main() {
-    VentApplication::default();
+    init_panic_hook();
+    Logger::init();
+    let app = VentApplication::default();
+    app.start();
 }
 
 #[cfg(target_os = "android")]
